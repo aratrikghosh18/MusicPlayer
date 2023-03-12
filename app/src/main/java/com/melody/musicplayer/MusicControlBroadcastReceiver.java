@@ -118,10 +118,10 @@ public class MusicControlBroadcastReceiver extends BroadcastReceiver {
                 }
                 break;
             case "CloseNotification":
-                closeNotification();
                 if (broadcastListenerInterface!=null){
                     broadcastListenerInterface.updateUIMusicControls("PlayPause");
                 }
+                closeNotification();
                 break;
         }
     }
