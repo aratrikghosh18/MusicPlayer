@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="110dp"
+    android:padding="10dp"
+    android:background="@color/white">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/closeNotification"
+        android:src="@drawable/ic_baseline_close_24"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"/>
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/songimage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="10dp" />
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:text="Song Title"
+        android:id="@+id/songtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/closeNotification"
+        android:layout_toEndOf="@id/songimage"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:text="Song Artist"
+        android:id="@+id/songartist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/songimage"
+        android:layout_toStartOf="@+id/closeNotification"
+        android:layout_below="@id/songtitle"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:id="@+id/songplayprogressbar"
+        android:layout_below="@+id/songartist"
+        android:layout_toEndOf="@+id/songimage"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:progressBackgroundTint="#77BB86FC"
+        android:progressTint="#FFBB86FC"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toEndOf="@+id/songimage"
+        android:layout_below="@+id/songplayprogressbar"
+        android:layout_marginTop="5dp"
+        android:weightSum="5"
+        android:id="@+id/musiccontrollayout">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/shuffleSong"
+            android:src="@drawable/ic_baseline_shuffle_24"
+            android:padding="5sp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/prevSong"
+            android:src="@drawable/ic_baseline_skip_previous_24"
+            android:rotationX="180"
+            android:padding="5sp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/pausePlaySong"
+            android:src="@drawable/ic_baseline_pause_24"
+            android:padding="5sp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/nextSong"
+            android:src="@drawable/ic_baseline_skip_next_24"
+            android:padding="5sp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/repeatSong"
+            android:src="@drawable/ic_baseline_repeat_one_24"
+            android:padding="5sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
