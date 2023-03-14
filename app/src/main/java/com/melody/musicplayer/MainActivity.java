@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements BroadcastListener
     RelativeLayout musicplayeruilayout;
     ImageView closeuilayout,uishuffleSong,uiprevSong,uipausePlaySong,uinextSong,uirepeatSong;
     ProgressBar progressBar;
+    Snackbar snackbar;
     RecyclerView tracklistrecyclerview;
     MyRecyclerViewAdapter myRecyclerViewAdapter;
     ArrayList<String> songTitle = new ArrayList<>();
@@ -416,7 +417,7 @@ public class MainActivity extends AppCompatActivity implements BroadcastListener
     }
 
     public void checkPermission(){
-        Snackbar snackbar = Snackbar.make(findViewById(R.id.snackbarlayout),
+        snackbar = Snackbar.make(findViewById(R.id.snackbarlayout),
                 "Please allow Permission to read Phone Storage/Memory Card for Songs!!\n\n" +
                         "Click Settings -> Permissions -> Files and media -> Allow access",
                 Snackbar.LENGTH_INDEFINITE);
@@ -442,6 +443,7 @@ public class MainActivity extends AppCompatActivity implements BroadcastListener
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (grantResults.length>0){
             if (grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                snackbar.dismiss();
                 readSongsFromPhone();
             }
         }
