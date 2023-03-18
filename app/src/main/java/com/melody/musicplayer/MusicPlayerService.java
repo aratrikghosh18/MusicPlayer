@@ -85,7 +85,7 @@ public class MusicPlayerService extends Service {
         ConstantValues.remoteViews = remoteViews;
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this,CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.baseline_music_note_24)
                 .setContent(remoteViews);
         Notification notification = mBuilder.build();
         notification.deleteIntent = getPendingSelfIntent(this,broadcastIntent,"CloseNotification");
